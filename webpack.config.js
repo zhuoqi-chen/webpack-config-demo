@@ -5,11 +5,11 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new extractTextPlugin('css/[name]-css.css');
 const extractLESS = new extractTextPlugin('css/[name]-less.css');
 module.exports = {
-    entry: './src/index.js',
+    entry: ['babel-polyfill','./src/index.js'],
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',
-        filename: 'main.js'
+        filename: '[name].js'
     },
     module: {
         rules: [

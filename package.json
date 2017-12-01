@@ -1,7 +1,7 @@
 {
   "name": "webpack-config-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack config for css less and es6 grammar",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist/*",
@@ -35,5 +35,8 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.9.0",
     "webpack-dev-server": "^2.9.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
   }
 }

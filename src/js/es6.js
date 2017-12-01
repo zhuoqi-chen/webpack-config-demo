@@ -3,11 +3,20 @@ class ES6 {
         console.log('hi es6');
         this.init();
     }
-    init(){
-        console.log('init');
+    myPromose(){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('done')
+            }, 3000);
+        });
+    }
+    async init(){
+        const result = await this.myPromose()
+        console.log(result);
     }
     log(text){
         console.log(text);
     }
+
 }
 export default ES6;
