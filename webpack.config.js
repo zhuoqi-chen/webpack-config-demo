@@ -1,11 +1,15 @@
 // import webpack from 'webpack';
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const extractCSS = new extractTextPlugin('css/[name]-css.css');
 const extractLESS = new extractTextPlugin('css/[name]-less.css');
 module.exports = {
-    entry: ['babel-polyfill','./src/index.js'],
+    entry: [
+        'babel-polyfill',
+        './src/index.js'
+    ],
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',
@@ -52,6 +56,7 @@ module.exports = {
     plugins:[
         extractCSS,
         extractLESS,
+        new webpack.EnvironmentPlugin(['NODE_ENV']),
         new HtmlWebpackPlugin({
             title:'my-app',
             template:'index.ejs'
